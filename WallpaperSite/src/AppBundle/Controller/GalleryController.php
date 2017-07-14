@@ -13,16 +13,25 @@ class GalleryController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $image = 'skyline.jpg';
+        $images = [
+            'skyline.jpg',
+            'skyline1.jpg',
+            'skyline2.jpg',
+            'skyline3.jpg',
+            'skyline4.jpg',
+            'skyline5.jpg',
+            'skyline6.jpg',
+        ];
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $images,
+            $request->query->getInt('page', 1)/*page number*/,
+            4/*limit per page*/
+        );
 
         return $this->render('gallery/index.html.twig', [
-            'images' =>  [
-                $image,
-                $image,
-                $image,
-                $image,
-                $image,
-            ]
+            'images' => $pagination
         ]);
     }
 }
