@@ -17,6 +17,24 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
         $this->addReference('category.bmw', $category);
 
         $manager->persist($category);
+
+
+        $category = (new Category())
+            ->setName('Shelby GT 500');
+
+        $this->addReference('category.shelby', $category);
+
+        $manager->persist($category);
+
+
+        $category = (new Category())
+            ->setName('Nissan Skyline R-34');
+
+        $this->addReference('category.nissan', $category);
+
+        $manager->persist($category);
+
+
         $manager->flush();
     }
 
