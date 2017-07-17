@@ -1,0 +1,3 @@
+easy_admin:
+    entities:
+        Category: AppBundle\Entity\Category
