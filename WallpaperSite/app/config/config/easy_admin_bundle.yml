@@ -16,5 +16,4 @@ easy_admin:
                 fields:
                     - { property: "file", type: file, label: ""}
                     - "slug"
-                    - "width"
-                    - "height"
+
