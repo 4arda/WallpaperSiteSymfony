@@ -29,7 +29,7 @@ class WallpaperUploadListener
     {
         $entity = $eventArgs->getEntity();
 
-//        if not Wallpaper entity, return fales
+//        if not Wallpaper entity, return false
         if (false === $eventArgs->getEntity() instanceof Wallpaper) {
             return false;
         }
@@ -53,6 +53,16 @@ class WallpaperUploadListener
         $this->fileMover->move($temporaryLocation, $newFileLocation);
 
 //        - update the entity with additonal info
+
+        [
+            0 => $width,
+            1 => $height
+        ] = getimagesize($newFileLocation);
+
+        $entity
+            ->setFilename($file->getClientOriginalName())
+            ->setHeight($height)
+            ->setWidth($width);
 
         return true;
     }
