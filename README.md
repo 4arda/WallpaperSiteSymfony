@@ -8,7 +8,7 @@ I want to indroduce You a website with my dream cars wallpapers in Symfony.
 What it does:
 -------------
 
-**Home page** - shows firs 2 images from every categories and on the bottom randoms images
+**Home page** - shows first 2 images from every categories and on the bottom randoms images
 
 <img width="400" alt="zrzut ekranu 2017-07-18 o 17 52 18" 
 src="https://user-images.githubusercontent.com/27738202/28327011-935f39f6-6be2-11e7-9503-11028cb6ede2.png">
