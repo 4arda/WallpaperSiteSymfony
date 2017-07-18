@@ -27,15 +27,17 @@ services:
             - "@filesystem"
 
     app.service.wallpaper_file_path_helper:
-            class: AppBundle\Service\WallpaperFilePathHelper
-            arguments:
-                - "%kernel.root_dir%/../web/images/"
+        class: AppBundle\Service\WallpaperFilePathHelper
+        arguments:
+            - "%kernel.root_dir%/../web/images/"
 
     app.doctrine_event_listener.wallpaper_upload_listener:
-                class: AppBundle\Event\Listener\WallpaperUploadListener
-                arguments:
-                    - "@app.service.local_filesystem_file_mover"
-                    - "@app.service.wallpaper_file_path_helper"
+        class: AppBundle\Event\Listener\WallpaperUploadListener
+        arguments:
+            - "@app.service.local_filesystem_file_mover"
+            - "@app.service.wallpaper_file_path_helper"
+        tags:
+            - { name: doctrine.event_listener, event: prePersist}
 
 #    # makes classes in src/AppBundle available to be used as services
 #    # this creates a service per class whose id is the fully-qualified class name
