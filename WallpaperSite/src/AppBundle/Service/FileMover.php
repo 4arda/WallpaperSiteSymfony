@@ -2,7 +2,7 @@
 
 namespace AppBundle\Service;
 
-interface FileMoverI
+interface FileMover
 {
     public function move($existingFilePath, $newFilePath);
 }
