@@ -20,7 +20,12 @@ services:
             - "@doctrine.orm.default_entity_manager"
         tags:
             - { name: console.command }
-#
+
+    app.service.file_mover:
+        class: AppBundle\Service\FileMover
+        arguments:
+            - "@filesystem"
+
 #    # makes classes in src/AppBundle available to be used as services
 #    # this creates a service per class whose id is the fully-qualified class name
 #    AppBundle\:
