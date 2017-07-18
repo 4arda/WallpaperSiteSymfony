@@ -3,6 +3,9 @@
     "license": "proprietary",
     "type": "project",
     "autoload": {
+        "psr-0": {
+            "AppBundle\\": "src/AppBundle"
+        },
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
         },
@@ -22,8 +25,12 @@
     "require": {
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "doctrine/doctrine-migrations-bundle": "^1.0",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
+        "javiereguiluz/easyadmin-bundle": "^1.16",
+        "knplabs/knp-paginator-bundle": "^2.6",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
         "symfony/monolog-bundle": "^3.1.0",
@@ -33,6 +40,7 @@
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
+        "phpspec/phpspec": "^3.4",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
     },
