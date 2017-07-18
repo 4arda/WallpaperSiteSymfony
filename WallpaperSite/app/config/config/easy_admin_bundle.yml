@@ -16,4 +16,5 @@ easy_admin:
                 fields:
                     - { property: "file", type: file, label: "File"}
                     - "slug"
+                    - "category"
 
